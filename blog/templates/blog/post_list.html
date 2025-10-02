@@ -9,19 +9,13 @@
         <h1><a href="/">Django Girls Blog</a></h1> <!-- settng up a important heading with a link to nowhere -->
     </header> <!-- closing the header -->
 
-    {{ posts }} <!-- use to setup a self-contained location in the document -->
-        <time>published: 14.06.2014, 12:14</time> <!-- stating the date and time -->
-        <h2><a href="">My first post</a></h2> <!-- setting up a not so important heading with a link to nowhere -->
-        <!-- Setting up a paragraph of information -->
-        <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-    {{ posts }} <!-- Closing the self-contained section -->
-
-    <!-- Use the commment from above as these are the same just on a second self-contained document -->
-    {{ posts }}
-        <time>published: 14.06.2014, 12:14</time>
-        <h2><a href="">My second post</a></h2>
-        <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut f.</p>
-    {{ posts }}
+{% for post in posts %}
+    <article>
+        <time>published: {{ post.published_date }}</time>
+        <h2><a href="">{{ post.title }}</a></h2>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </article>
+{% endfor %}
 
 </body> <!-- Closing the programming section-->
 </html> <!-- Closing the root element -->
