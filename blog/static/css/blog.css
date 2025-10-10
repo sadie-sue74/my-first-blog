@@ -52,8 +52,8 @@ h4 {
     color: #735daf;
 }
 
-.post > .date,
-.post > .actions {
+.post>.date,
+.post>.actions {
     float: right;
 }
 
@@ -68,4 +68,17 @@ h4 {
 .btn-secondary:hover {
     color: #FFFFFF;
     background-color: #C25100;
+}
+
+#logout {
+    font-family: 'Lobster', cursive;
+
+}
+
+small a,
+small a:hover,
+small a:visited {
+    font-size: 15pt;
+    color: #ffffff;
+    text-decoration: none;
 }
